@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>Bookmarks</title>
+		<link rel="stylesheet" href="/icons.css" />
+		<link rel="stylesheet" href="/mdl.css" />
+		<link rel="stylesheet" href="/style.css" />
+		<script async defer src="/mdl.js"></script>
+		<script src="/vue.js"></script>
+		<script async defer src="/db.js"></script>
+		<script async defer src="/create.js"></script>
+		<script async defer src="/main.js"></script>
+	</head>
+	<body>
+		<span id="app">
+			<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+			<div
+				class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+  mdl-layout--fixed-header full-height"
+			>
+				<header class="mdl-layout__header">
+					<div class="mdl-layout__header-row">
+
+						<span class="mdl-layout-title">
+							<label @click="toggleFilter('reset')"  v-if="keywordFilter !== null" class="mdl-button mdl-js-button mdl-button--icon" data-upgraded=",MaterialButton"><i class="material-icons">close</i></label @click="toggleFilter('keywordFilter',tag[0])" >
+
+							{{keywordFilter}}
+						</span>
+				
+						<div class="mdl-layout-spacer"></div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+        mdl-textfield--floating-label mdl-textfield--align-right"
+						>
+							<label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+								<i class="material-icons">search</i>
+							</label>
+
+							<div class="mdl-textfield__expandable-holder">
+								<input @change="toggleFilter('searchFilter', $event.target.value)" class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp" placeholder="Search"/>
+							</div>
+						</div>
+					</div>
+				</header>
+				<div class="mdl-layout__drawer">
+					<span class="mdl-layout-title">Bookmarks</span>
+					<nav class="mdl-navigation">
+						<span v-for="tag in extractTags" @click="toggleFilter('keywordFilter',tag[0])" class="mdl-navigation__link">
+							<span>{{tag[0]}}</span>
+							<span class="tag-count">
+								{{tag[1]}}
+							</span>
+					</nav>
+				</div>
+				<main class="mdl-layout__content">
+					<div class="page-content">
+						<slot v-for="(bookmark, index) in filterBookmarks">
+							<div class="demo-card-square mdl-card mdl-shadow--2dp">
+								<div class="mdl-card__title mdl-card--expand">
+									<h2 class="mdl-card__title-text">{{bookmark.title}}</h2>
+								</div>
+								<div class="mdl-card__supporting-text">
+									{{bookmark.summary}}
+								<div class="mdl-card__url">
+									<a :href="bookmark.url" target="_blank"> {{bookmark.url}} </a>
+								</div>					
+								</div>
+
+								<div class="mdl-card__actions mdl-card--border">
+									<a :href="bookmark.url" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+										Visit {{bookmark.hostname}}
+									</a>
+									<button :id="bookmark.url" class="mdl-button mdl-js-button mdl-button--icon  right">
+									<i class="material-icons">more_vert</i>
+									</button>
+
+									<ul  :for="bookmark.url" class="mdl-menu mdl-js-menu mdl-menu--top-right">
+										<li  @click="deleteBookmark(bookmark.url)"  class="mdl-menu__item">Delete</li  class="mdl-menu__item">
+									</ul>
+
+								</div>
+							</div>
+
+						</slot>
+
+						<div v-if="bookmarks.length < 1" class="mdl-card mdl-shadow--4dp">
+							<div class="mdl-card__title">
+							  <div class="mdl-card__title-text">Welcome</div>
+								<div class="mdl-card__subtitle-text">
+								You don't have any bookmarks yet.
+								</div>	
+							</div>
+						<div class="mdl-card__supporting-text">
+							Start saving webpages to get automatic tags, summaries and full text search for all your bookmarks.
+						</div>
+					</div>
+
+					</div>
+				</main>
+			</div>
+		</span>
+	</body>
+</html>

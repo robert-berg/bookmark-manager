@@ -1,0 +1,130 @@
+.card-square.mdl-card {
+	width: 320px;
+	height: 320px;
+}
+.card-square > .mdl-card__title {
+	color: #fff;
+	background: url("../assets/demos/dog.png") bottom right 15% no-repeat #46b6ac;
+}
+
+.mdl-card {
+	margin: 16px;
+	text-align: left;
+	display: inline-block;
+	width: 356px;
+}
+
+.page-content {
+	text-align: center;
+}
+
+body {
+	background-color: #3f51b5;
+}
+
+.mdl-navigation__link {
+	cursor: pointer;
+	font-size: 17.4px;
+	color: #34363c !important;
+}
+
+.mdl-layout__drawer {
+	background-color: #ffffff;
+	min-height: 100%;
+	top: 0;
+	bottom: 0;
+}
+
+span.tag-count {
+	float: right;
+	background-color: #eeeeee;
+	height: 24px;
+	text-align: center;
+	width: 24px;
+	border-radius: 99px;
+	font-size: 16px;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+	background-color: #f8f8f8;
+}
+
+.mdl-card__url a {
+	font-size: 12.5px;
+	color: #999;
+}
+
+.mdl-card__url {
+	margin-top: 12px;
+}
+
+.full-height {
+	min-height: 100%;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+#fixed-header-drawer-exp::placeholder {
+	color: #f8f8f89f;
+}
+
+.mdl-spinner {
+	background-color: white;
+	padding: 0px;
+	border: 5px solid #ffffff33;
+	text-align: center;
+	border-radius: 99px;
+}
+
+#popup {
+	background-color: #ffffff;
+	text-align: center;
+	font-size: 18px;
+}
+
+#popup-container {
+	height: 106px;
+	width: 154px;
+	padding: 32px 16px;
+}
+
+.right {
+	float: right;
+}
+
+.mdl-navigation {
+	overflow-x: hidden;
+}
+
+.mdl-card__title-text {
+	width: 100%;
+}
+
+.mdl-card__subtitle-text {
+	display: block;
+	width: 100%;
+	float: left;
+	clear: left;
+	flex-grow: 1;
+	box-sizing: border-box;
+}
+
+.mdl-card__title {
+	flex-direction: column;
+}
+
+.ad {
+	margin: auto;
+}
+
+.card-ad-container {
+	min-height: 0px;
+	padding: 12px;
+	background: #ffffff33;
+
+}
+
+.mdl-textfield__input {
+	border-bottom: 1px solid #a1a0a09f;
+}
