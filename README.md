@@ -2,6 +2,20 @@
 
 Bookmark manager with automatic summaries, tags, and full text search
 
+## Screenshots
+
+Overview
+
+![](/screenshot1.png)
+
+Popup
+
+![](/screenshot3.png)
+
+Filter by tag
+
+![](/screenshot2.png)
+
 ## Getting started
 
 **Run server**
