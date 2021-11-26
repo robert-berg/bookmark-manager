@@ -7,11 +7,12 @@ Bookmark manager with automatic summaries, tags, and full text search
 **Run server**
 
 ```
-cd .\_backend\
+cd ./_backend/
 python -m venv env
-.\env\Scripts\activate
-pip install -r .\requirements.txt
-.\app.py
+./env/Scripts/activate
+pip install -r ./requirements.txt
+python -m nltk.downloader punkt 
+./app.py
 ```
 
 **Install Chrome extension**
