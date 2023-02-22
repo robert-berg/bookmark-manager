@@ -1,6 +1,6 @@
 # Bookmark manager (Chrome Extension)
 
-Bookmark manager with automatic summaries, tags, and full text search
+Experimental bookmark manager with automatic summaries, tags, and full text search
 
 ## Getting started
 
